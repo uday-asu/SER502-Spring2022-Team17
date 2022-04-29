@@ -1,0 +1,15 @@
+Contributions from the team members until 31st March:
+
+*Basic Design on the language :Chandana,Paul,Akhil
+*Conceptualization and structure of the language:Chandana,Akhil
+*Grammar creation:Paul , Akhil , Uday , Chandana , Srikar
+*Poc for GitHub Repo:Uday, Srikar
+*Design Document:Paul,Srikar,Uday
+
+Contributions for the future:
+building of lexical analyzer -Chandana
+Grammar - Akhil,Chandana 
+building of parser - Paul,Akhil
+PPT and Youtube - Paul,Uday
+runtime - Uday,Srikar
+building of Semantic Analyzer-Srikar
