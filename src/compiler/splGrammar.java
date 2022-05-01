@@ -1,7 +1,8 @@
 package compiler;
 
 import java.io.*;
-import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
@@ -11,33 +12,34 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class splGrammar {
 
     public static void main(String[] args) throws IOException{
-       // Scanner sc= new Scanner(System.in);
-       // System.out.println("Enter the File Path:");
-       // String filePath = sc.nextLine();
 
-        BufferedReader reader = new BufferedReader(new FileReader(new File("C:\\Users\\svodeti\\IdeaProjects\\SER502Project_team17_SPL\\samples\\SampleProgram2.spl")));
-        String input = "";
-        String iterator = "";
-        while ((iterator = reader.readLine()) != null) {
-            input = input + iterator;
+        String filePath = args [0];
+        boolean exists = Files.exists(Paths.get(filePath));
+        if(!exists){
+            System.out.println("Error: file does not exists");
+            System.exit(1);
+        }
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(filePath)));
+        String in = "";
+        String itr = "";
+        while ((itr = bufferedReader.readLine()) != null) {
+            in = in + itr;
         }
 
-        CharStream inputStream = CharStreams.fromString(input);
-        splLexer lexer = new splLexer(inputStream);
-        CommonTokenStream tokenizer = new CommonTokenStream(lexer);
-        splParser parser = new splParser(tokenizer);
-        ParseTree tree = parser.program();
-
+        CharStream inCharStream = CharStreams.fromString(in);
+        splLexer spllexer = new splLexer(inCharStream);
+        CommonTokenStream tokens = new CommonTokenStream(spllexer);
+        splParser splpraser = new splParser(tokens);
+        ParseTree tree = splpraser.program();
 
         try {
-            PrintWriter writer = new PrintWriter("parseTree.pt", "UTF-8");
-            writer.println(tree.toStringTree(parser));
-            writer.close();
-            splEvaluate visitor = new splEvaluate();
-            visitor.visit(tree);
-        } catch (Exception e) {
-            System.out.println("Cannot write to the file \n\n\n\n"
-                    + e.toString());
+            PrintWriter writeFile = new PrintWriter("tree.pt", "UTF-8");
+            writeFile.println(tree.toStringTree(splpraser));
+            writeFile.close();
+        } catch (Exception ex) {
+            System.out.println("Unable to write into file." + ex.toString());
         }
+        splEvaluate visitor = new splEvaluate();
+        visitor.visit(tree);
     }
 }

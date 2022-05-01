@@ -1,30 +1,14 @@
 ***
 //
-digit a.
-digit b.
-a **= 80.
-b **= 20.
-digit c **= a *+ b.
-show c.
-c **= a *- b.
-show c.
-c **= a ** b.
-show c.
-c **= a */ b.
-show c.
-c++.
-show c.
-c--.
-show c.
-
-dual x **= false.
-dual y **= true.
-if_check x &&& y{
-    show "TRue".
-}
-else {
-   show "false".
-}
-
-
+digit a **= 10.
+digit factorial **= 1.
+show a.
+performtill (a*>0){
+    factorial **= factorial ** a.
+    a **= a*-1.
+    }
+    show "Factorial is: ".
+    show factorial.
 \\
+??? this
+program is about factorial ???

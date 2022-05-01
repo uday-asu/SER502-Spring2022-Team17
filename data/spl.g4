@@ -100,10 +100,8 @@ sent_option : number |str_sent| special_char;
 
 str_sent: Str;
 Str: '"' (~["])+ '"';
-
 identifier : ID;
 ID : [a-zA-Z][a-zA-Z0-9_]*;
-
 special_char : Special_char;
 Special_char : [$&+,:;=?@#|'<>.^*()%!-];
 
@@ -114,3 +112,6 @@ Digit : '0'
     ;
 
 WS  : [ \t\r\n]+ -> skip;
+
+COMMENT:            '???' .*? '???'    -> channel(HIDDEN);
+LINE_COMMENT:       '??' ~[\r\n]*    -> channel(HIDDEN);
