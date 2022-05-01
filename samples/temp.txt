@@ -17,4 +17,12 @@ performInRange w in range (5,10)
     show w.
 digit k **= z *== 12 : 5 , 10.
 show k.
+
+digit a **= 0.
+show a.
+digit res **= 0.
+performtill (a*<10)
+    show a.
+    a **= a *+ 1.
+    show a.
 \\

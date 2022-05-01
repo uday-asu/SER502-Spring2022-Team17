@@ -3,8 +3,10 @@
 digit a **= 10.
 digit factorial **= 1.
 show a.
-performtill(a*>0)
+performtill (a*>0){
     factorial **= factorial ** a.
-    a **= a *- 1.
+    a **= a*-1.
+    }
+    show "Factorial is: "
     show factorial.
 \\

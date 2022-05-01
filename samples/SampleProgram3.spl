@@ -2,8 +2,10 @@
 //
 digit sum **= 0.
 show sum.
-perform (digit i **= 0, i *< 5, i++)
-    perform (digit j **= 0, j *< i *+ 1, j++)
+perform (digit i **= 0, i *< 5, i++) {
+    perform (digit j **= 0, j *< i *+ 1, j++){
         sum **= sum *+ j.
         show sum.
+        }
+    }
 \\

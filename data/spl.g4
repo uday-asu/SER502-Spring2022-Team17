@@ -65,19 +65,19 @@ show : 'show' sentence  #showSentence
 ;
 
 
-if_check : 'if_check' condition block #ifCheck
-| 'if_check' condition block 'else' block #ifCheckElse ;
+if_check : 'if_check' condition '{' block '}' #ifCheck
+| 'if_check' condition '{' block '}' 'else' '{' block '}' #ifCheckElse ;
 
-condition : expression conditional_operator=('*==' | '*<' | '*>' | '*<=' | '*>=' | '*!=') expression #starCond
-| boolean_value=('true' | 'false') #starDualCond;
+condition : expression conditional_operator=('*==' | '*<' | '*>' | '*<=' | '*>=' | '*!=' ) expression #starCond
+| boolean_value=('true' | 'false' ) #starDualCond;
 
-performtill : 'performtill' '('condition')' block ;
+performtill : 'performtill' '('condition')' '{' block '}';
 
-perform : 'perform' '(' integer ','  condition ','  option ')' block;
+perform : 'perform' '(' integer ','  condition ','  option ')' '{' block '}';
 option : unary ;
 
-performInRange : 'performInRange'  identifier  'in' 'range' '('number ',' number')' block   #rangePerform
-|'performInRange'  identifier  'in' 'range' '('number ',' number ',' number ')' block   #stepRangePerform
+performInRange : 'performInRange'  identifier  'in' 'range' '('number ',' number')'  '{' block '}'   #rangePerform
+|'performInRange'  identifier  'in' 'range' '('number ',' number ',' number ')' '{' block '}'   #stepRangePerform
 ;
 
 ternary : 'digit' identifier  '**=' condition ':' expression ',' expression #ternaryInitDigit

@@ -5,8 +5,10 @@ digit y.
 x **= 8.
 y **= 4.
 
-if_check x *> y
+if_check x *> y{
     show "x is greater than y".
-else
+    }
+else {
    show "x is less than y".
+    }
 \\

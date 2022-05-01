@@ -265,6 +265,10 @@ public class splEvaluate extends splBaseVisitor{
                 return expr1 >= expr2;
             case "*!=":
                 return expr1 != expr2;
+            case "|||":
+                return expr1 | expr2;
+            case "&&&":
+                return expr1 & expr2;
         }
         return 0;
     }

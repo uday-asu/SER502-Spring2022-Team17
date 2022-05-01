@@ -17,5 +17,14 @@ show c.
 c--.
 show c.
 
+dual x **= false.
+dual y **= true.
+if_check x &&& y{
+    show "TRue".
+}
+else {
+   show "false".
+}
+
 
 \\

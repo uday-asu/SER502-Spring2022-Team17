@@ -11,11 +11,11 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class splGrammar {
 
     public static void main(String[] args) throws IOException{
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Enter the File Path:");
-        String filePath = sc.nextLine();
+       // Scanner sc= new Scanner(System.in);
+       // System.out.println("Enter the File Path:");
+       // String filePath = sc.nextLine();
 
-        BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)));
+        BufferedReader reader = new BufferedReader(new FileReader(new File("C:\\Users\\svodeti\\IdeaProjects\\SER502Project_team17_SPL\\samples\\SampleProgram2.spl")));
         String input = "";
         String iterator = "";
         while ((iterator = reader.readLine()) != null) {
@@ -27,7 +27,17 @@ public class splGrammar {
         CommonTokenStream tokenizer = new CommonTokenStream(lexer);
         splParser parser = new splParser(tokenizer);
         ParseTree tree = parser.program();
-        splEvaluate visitor = new splEvaluate();
-        visitor.visit(tree);
+
+
+        try {
+            PrintWriter writer = new PrintWriter("parseTree.pt", "UTF-8");
+            writer.println(tree.toStringTree(parser));
+            writer.close();
+            splEvaluate visitor = new splEvaluate();
+            visitor.visit(tree);
+        } catch (Exception e) {
+            System.out.println("Cannot write to the file \n\n\n\n"
+                    + e.toString());
+        }
     }
 }
