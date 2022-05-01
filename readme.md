@@ -18,12 +18,11 @@ Using JAVA and ANTLR libraries, we designed and developed a new language called 
    folder.
 4) Now open command prompt to run the JAR file mentioned in step-3.
 5) To execute any of the sample programs that are in Sample folder use the below command:
-   *java -jar /path/to/SER502Project_team17_SPL/lib/SER502Project_team17_SPL.jar*
-6) Above command will ask for an input to filepath. 
-   Ex: Enter the filepath: */path/to/SER502Project_team17_SPL/samples/<filename>.spl*
+   *java -jar /path/to/SER502Project_team17_SPL/lib/SER502Project_team17_SPL.jar /path/to/SER502Project_team17_SPL/samples/<filename>.spl*
 
 # Future Implementations
-1) Functions
-2) Arrays
-3) String operations(Concatenation, Multiplication, Slicing)
+1) As of now our language does the basic works like declarations, mathematical operations, branch statements etc,
+2) In the future we would like to implement file parsing and csv record reading. 
+3) We would like to incorporate the usage of libraries for our language too. 
+4) We see scope and potential in our languages to harness machine learning too.
 
