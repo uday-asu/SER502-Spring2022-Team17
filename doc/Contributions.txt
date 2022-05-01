@@ -1,4 +1,4 @@
-Contributions from the team members until 31st March:
+Contributions from the team members until 31st March (Milestone 1):
 
 *Basic Design on the language :Chandana,Paul,Akhil
 *Conceptualization and structure of the language:Chandana,Akhil
@@ -6,10 +6,28 @@ Contributions from the team members until 31st March:
 *Poc for GitHub Repo: Uday, Srikar
 *Design Document: Paul, Srikar, Uday
 
-Contributions for the future:
-building of lexical analyzer -Chandana
-Grammar - Akhil, Chandana
-building of parser - Paul, Akhil
-PPT and Youtube - Paul, Uday
-runtime - Uday, Srikar
-building of Semantic Analyzer- Srikar
+
+Contributions from the team members until April 29th 2022:
+
+*Setting up ANTLR and JAVA IDE - Srikar, Paul, Uday, Akhil, Chandana
+
+*building of lexical analyzer and Grammar-Chandana
+
+*Grammar and Sample Program running and testing- Akhil,Chandana
+
+*building of parser and Structuring the Grammar- Paul,Akhil
+
+*PPT and Youtube - Paul,Uday
+
+*runtime and Evaluation - Uday,Srikar
+
+*building of Semantic Analyzer-Srikar
+
+*Poc for GitHub Repo:Uday, Srikar
+
+*Design Document:Paul,Srikar,Uday
+
+*Conceptualization and structure of the language and Lexer :Chandana,Akhil
+
+*Integrating all the files: Srikar, Uday
+
