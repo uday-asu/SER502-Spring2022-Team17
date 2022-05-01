@@ -1,0 +1,6 @@
+***
+//
+performInRange w in range (5,10) {
+    show w.
+    }
+\\
