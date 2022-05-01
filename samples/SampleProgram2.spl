@@ -1,0 +1,21 @@
+***
+//
+digit a.
+digit b.
+a **= 80.
+b **= 20.
+digit c **= a *+ b.
+show c.
+c **= a *- b.
+show c.
+c **= a ** b.
+show c.
+c **= a */ b.
+show c.
+c++.
+show c.
+c--.
+show c.
+
+
+\\
